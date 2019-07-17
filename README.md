@@ -6,8 +6,8 @@ When we think about improving the performance of our app, there are two major ki
 
 ## Fast load time
 The speed in which user able to see our content when user type our url in browser address bar. There already blendy of talks around this area about what are all the best practices we should follow to deliver content faster.
-![The Cost Of JavaScript In 2018](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4)
-![The Cost Of JavaScript In 2019](https://v8.dev/blog/cost-of-javascript-2019)
+[The Cost Of JavaScript In 2018](https://medium.com/@addyosmani/the-cost-of-javascript-in-2018-7d8950fbb5d4)
+[The Cost Of JavaScript In 2019](https://v8.dev/blog/cost-of-javascript-2019)
 
 ## Fast runtime
 The speed in which user able to interact with our page. Example when the user click on checkout button (if your app is ecommerce) it should not take more than 3s to take you to the payment page (Yes I agree that, this involves server response time also).
