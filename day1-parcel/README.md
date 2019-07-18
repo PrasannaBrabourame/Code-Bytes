@@ -20,7 +20,9 @@ Let's get right into it and see how Parcel works. Create a new working directory
 ```sh
 npm install -g parcel-bundler
 ```
-
+```sh
+npm init -y
+```
 ## Parcel and React
 
 That's all there is to get started. Next, let's actually setup a React project with Parcel. Before we go on, we'll need to install some dependencies.
