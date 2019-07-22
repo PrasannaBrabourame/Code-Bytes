@@ -1,4 +1,4 @@
-## Set Up A React Project With Webpack: The Zero Configuration App Bundler
+## Set Up A React Project With Webpack: 
 
 React is the most popular javascript framework which is used by millions of developers around the globe. Creating a React app from Scratch is quite painful as it requires a lot of configuration. We all know that create-react-app gives a nice boilerplate to begin a journey with react, but it lacks some amount of configuration.
 
