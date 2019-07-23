@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML Tutorial</title>
+    <style>
+        .clsdemo {
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="demo" style="border: 1px solid black;height: 300px;width: 500px;">This vehicle debuted in Japan in February 1985 as the
+        Honda Quint Integra, available only at Honda's Japanese dealership sales channel Honda Verno before going on
+        sale a year later in North America as part of the then-new luxury Acura lineup. The three-door hatchback was the
+        only model available originally, with a five-door arriving in October 1985. The four-door saloon bodystyle
+        became available in Japan in the autumn of 1986.[10] Only the hatchback versions were sold in the U.S. A 1.6 L
+        DOHC 16-valve four-cylinder engine powered most versions. The engine was the vehicle's most publicized feature,
+        as DOHC, multi-valve engines were not commonplace in entry-level models at the time.</div>
+        <div id="demoTextArea" contenteditable="true"></div>
+        <button id="demobutton" onclick="democlick()">Demo Button</button>
+    <script>
+        //setTimeout(function(){
+          //  document.getElementById('demo').classList.add('clsdemo');
+        //},10000)
+
+        function democlick(){
+            document.getElementById('demo').classList.add('clsdemo');
+        }
+
+    </script>
+</body>
+
+</html>

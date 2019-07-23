@@ -4,12 +4,12 @@
   "description": "<h1>Jest - JavaScript Testing Framework</h1>",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "validate": "jest --config ./jest.config.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "request": "^2.88.0"
+    "jest": "^24.8.0"
   }
 }
