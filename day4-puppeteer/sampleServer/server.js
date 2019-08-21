@@ -10,4 +10,5 @@ http.createServer(function(req, res) {
         res.end();
     });
     stream.pipe(res);
+    console.log(9999)
 }).listen(9999);
