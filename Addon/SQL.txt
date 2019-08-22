@@ -1,0 +1,169 @@
+Please answer the following questions:
+
+Given a table SALARIES, such as the one below, that has m = male and f = female values. Swap all f and m values (i.e., change all f values to m and vice versa) with a single update query and no intermediate temp table.
+
+Id  Name  Sex  Salary
+1   A     m    2500
+2   B     f    1500
+3   C     m    5500
+4   D     f    500
+
+ANSWER:
+Updating the salary table where m turns to f and else m. by using set condition. without using temp table
+
+Eg:
+UPDATE salary
+SET
+    sex = CASE sex
+        WHEN 'm' THEN 'f'
+        ELSE 'm'
+    END;
+
+-----------------------------------------------------------------------------
+Write a SQL query to find the 10th highest employee salary from an Employee table. Explain your answer.
+
+(Note: You may assume that there are at least 10 records in the Employee table.)
+
+ANSWER:
+Creating a table salary with two column(ie: 1 - employee name , 2 - employee salary) after that for demo 
+purpose inserting 12 dummy values and then selecting the salary row with the help of unique name (assumption)
+filter the details in ascending order and selecting the 10th row which has the 10th highest salary details.
+
+Eg:
+CREATE TABLE #salary(names varchar(100), salary int);
+
+INSERT INTO #salary(names,salary) VALUES
+  ('prasanna',5),
+  ('kun',560),
+  ('ran',800),
+  ('pranna',1400),
+  ('ram',800),
+  ('ran',6800),
+  ('vick',9000),
+  ('gop',112),
+  ('shar',846),
+  ('dev',334),
+  ('ara',700),
+  ('cath',852);
+
+
+  SELECT salary FROM #salary ORDER BY salary ASC 
+
+  SELECT * FROM 
+   (
+   SELECT 
+   ROW_NUMBER() OVER(ORDER BY salary)AS rno ,
+   salary 
+   FROM #salary
+   ) a
+  WHERE rno = 10
+-----------------------------------------------------------------------------
+What is a key difference between Truncate and Delete?
+ANSWER:
+TRUNCATE: removes all rows from a table including unique key values
+DELETE : remove all data from the table without affecting unique key and unique key value is retained.
+
+
+
+-----------------------------------------------------------------------------
+What is the difference between the WHERE and HAVING clauses?
+
+ANSWER:
+
+HAVING: used to check conditions after the aggregation takes place.
+WHERE: used to apply the filters and it is used before the aggregation takes place.
+
+-----------------------------------------------------------------------------
+Explain Commit, Rollback
+ANSWER:
+Commit : A successful transaction is said to be committed.
+Rollback : If a transaction is not a successful transaction than it should be rolled back.
+
+-----------------------------------------------------------------------------
+What is ETL?
+
+ANSWER:
+E - Extract 
+T - Transform 
+L - Load 
+
+Used for safer transaction of data. Similar to that of encryption. Initially datas are unreadable format
+after ETL completes by converting data to readable format.
+
+-----------------------------------------------------------------------------
+
+7)  What will be the final values in table dbo.envelope & dbo.docs after executing below queries?
+
+CREATE TABLE dbo.envelope(id int, user_id int);
+CREATE TABLE dbo.docs(idnum int, pageseq int, doctext varchar(100));
+
+INSERT INTO dbo.envelope VALUES
+  (1,1),
+  (2,2),
+  (3,3);
+
+INSERT INTO dbo.docs(idnum,pageseq) VALUES
+  (1,5),
+  (2,6),
+  (null,0);
+
+
+UPDATE docs SET doctext=pageseq FROM docs INNER JOIN envelope ON envelope.id=docs.idnum
+WHERE EXISTS (
+  SELECT 1 FROM dbo.docs
+  WHERE id=envelope.id
+);
+ANSWER:
+Since last row of docs column idnum is null the resulted output of 3 rows will also be null
+
+Eg:
+1	5	5
+2	6	6
+NULL	0	NULL
+
+
+-----------------------------------------------------------------------------
+ Given two tables created as follows
+
+create table test_a(id numeric);
+
+create table test_b(id numeric);
+
+insert into test_a(id) values
+  (10),
+  (20),
+  (30),
+  (40),
+  (50);
+
+insert into test_b(id) values
+  (10),
+  (30),
+  (50);
+Write a join query to fetch values in table test_a that are not in test_b without using the NOT keyword.
+
+ANSWER:
+except keyword is used to get the mismatched data from test_a and test_b table.
+Eg:
+create table #test_a(id numeric);
+
+create table #test_b(id numeric);
+
+insert into #test_a(id) values
+  (10),
+  (20),
+  (30),
+  (40),
+  (50);
+
+insert into #test_b(id) values
+  (10),
+  (30),
+  (50);
+
+  select * from #test_a
+  except
+  select * from #test_b
+
+-----------------------------------------------------------------------------
+
