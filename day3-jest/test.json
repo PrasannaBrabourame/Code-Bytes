@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "946c1a5a-7d36-4210-9a27-85335e4d43ee",
+		"name": "NLP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://issez-s164:8883/v2/detectDialect",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "text",
+							"value": "I like pink colour.",
+							"type": "text"
+						},
+						{
+							"key": "lang",
+							"value": "en",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://issez-s164:8883/v2/detectDialect",
+					"protocol": "http",
+					"host": [
+						"issez-s164"
+					],
+					"port": "8883",
+					"path": [
+						"v2",
+						"detectDialect"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://issez-s164:8883/v2/detectUK",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "text",
+							"value": "I like pink color.",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://issez-s164:8883/v2/detectUK",
+					"protocol": "http",
+					"host": [
+						"issez-s164"
+					],
+					"port": "8883",
+					"path": [
+						"v2",
+						"detectUK"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://issez-s164:8883/v2/SentenceSplitService",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "text",
+							"value": "Classes need to be listed in the label map. Since we’re only detecting corgis, the label map should contain only one item like the following.",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "en",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://issez-s164:8883/v2/SentenceSplitService",
+					"protocol": "http",
+					"host": [
+						"issez-s164"
+					],
+					"port": "8883",
+					"path": [
+						"v2",
+						"SentenceSplitService"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://issez-s164:8883/v2/check",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "text",
+							"value": "I have few book.",
+							"type": "text"
+						},
+						{
+							"key": "language",
+							"value": "en-us",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://issez-s164:8883/v2/check",
+					"protocol": "http",
+					"host": [
+						"issez-s164"
+					],
+					"port": "8883",
+					"path": [
+						"v2",
+						"check"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
