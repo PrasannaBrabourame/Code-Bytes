@@ -12,6 +12,9 @@
     <div id="app">
         <h1>My To Do List</h1>
         <input type="text" name="entry" v-model="newEntry" v-on:keyup.13="addEntry">
+        <p>
+            Unfinished Entries : {{unfinishedEntries.length}}
+        </p>
         <div class="items">
             <div class="item" v-for="(entry,index) in todos" v-bind:class="{done: entry.isDone}">
                 <input type="checkbox" name="isDone" v-model="entry.isDone">
@@ -19,6 +22,12 @@
                 <a class="close" v-on:click="removeEntry(index)">X</a>
             </div>
         </div>
+        <!-- Test for v-if directive -->
+        <div v-if="testCondition == 'A'">Test A</div>
+        <div v-else-if="testCondition == 'B'">Test B</div>
+        <div v-else="testCondition">Test C</div>
+        <!-- Test for v-show directive -->
+        <div v-show="testCondition == 'A'">Test Show A</div>
 
     </div>
     <script type="text/javascript" src="assets/javascripts/lib/vue.js"></script>

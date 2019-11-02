@@ -1,9 +1,17 @@
 new Vue({
     el: "#app",
     data: {
+        // Test condition is for v-if and v-show
+        testCondition : 'A',
         newEntry: "",
         todos: []
     },
+    computed: {
+        unfinishedEntries : function(){
+            return this.todos.filter(entry => !entry.isDone)
+        }
+    },
+    // watch is watch and update in database after render
     watch: {
         todos: {
             handler: function (newTodos) {
@@ -25,6 +33,7 @@ new Vue({
 
         }
     },
+    // Lifecycle Methods
     beforeCreate: function () {
         console.log("before create")
     },
