@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO List</title>
+    <link rel="stylesheet" href="assets/stylesheets/index.css">
+</head>
+
+<body>
+    <div id="app">
+        <h1>My To Do List</h1>
+        <input type="text" name="entry" v-model="newEntry" v-on:keyup.13="addEntry">
+        <div class="items">
+            <div class="item" v-for="(entry,index) in todos" v-bind:class="{done: entry.isDone}">
+                <input type="checkbox" name="isDone" v-model="entry.isDone">
+                {{entry.value}}
+                <a class="close" v-on:click="removeEntry(index)">X</a>
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="assets/javascripts/lib/vue.js"></script>
+    <script type="text/javascript" src="assets/javascripts/index.js"></script>
+</body>
+
+</html>

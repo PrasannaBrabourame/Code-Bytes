@@ -1,0 +1,43 @@
+body > div {
+  width: 600px;
+  max-width: 90%;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+body > div input[type="text"] {
+  width: 90%;
+  font-size: 1.2rem;
+  padding: 0.4em;
+}
+body > div input[type="text"]:focus {
+  outline: none;
+}
+.status {
+  text-align: left;
+  margin: 1rem 0;
+}
+.items {
+  text-align: left;
+  margin: 1rem 0;
+}
+.items .item {
+  margin: 0.5em 0;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+.items .item input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 1rem;
+}
+.items .item.done {
+  text-decoration: line-through;
+  color: grey;
+}
+.items .item .close {
+  color: red;
+  font-weight: bold;
+  margin-left: auto;
+  cursor: pointer;
+}
