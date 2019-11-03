@@ -63,6 +63,7 @@ Let us start with the package.json. We need the following libraries in our app.
 `
 
 **We need to create a few more files for our project as shown in below image**
+
 ![image](https://user-images.githubusercontent.com/25142868/68082185-7f152e00-fe3f-11e9-8af9-03c5d5064c94.png)
 
 > **Now let us add our config code in config.js**
