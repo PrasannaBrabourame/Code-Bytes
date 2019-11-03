@@ -14,17 +14,19 @@ exports.jwtTokenValidator = (token) => {
     if (token.startsWith('Bearer ')) {
         token = token.slice(7, token.length); // Remove Bearer from string
     }
+    let result = undefined;
     jwt.verify(token, config.secret, (err, decoded) => {
         if (err) {
-            return {
+            result= {
                 success: false,
                 message: 'Invalid Token.'
             };
         } else {
-            return {
+            result = {
                 decoded: decoded,
                 success: true
             };
         }
     });
+    return result;
 }
