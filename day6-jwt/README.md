@@ -1,27 +1,30 @@
 **
 
-JWT (JSON Web Token)
+> JWT (JSON Web Token)
 
 **
 JWT authentication is becoming very popular these days. JWT is a type of token-based authentication. For every single request from a client to the server, a token is passed for authentication. It supports the stateless API calls.
 
-image
+![image](https://user-images.githubusercontent.com/25142868/68082005-07460400-fe3d-11e9-9b34-431224f82031.png)
 
-We can summarise above picture into following points:
+> **We can summarise above picture into following points:**
 
-A client sends username/password combination to the server
-The server validates the authentication
-If authentication is successful, the server creates a JWT token else establishes an error response
-On successful authentication, the client gets JWT token in the response body
-Client stores that token in local storage or session storage.
-From next time, the client for making any request supplies the JWT token in request headers like this. Authorization: Bearer <jwt_token>
-Server upon receiving the JWT validates it and sends the successful response else error.
-Developing the sample application
+- A client sends username/password combination to the server
+- The server validates the authentication
+- If authentication is successful, the server creates a JWT token else establishes an error response
+- On successful authentication, the client gets JWT token in the response body
+- Client stores that token in local storage or session storage.
+- From next time, the client for making any request supplies the JWT token in request headers like this. Authorization: Bearer <jwt_token>
+- Server upon receiving the JWT validates it and sends the successful response else error.
+
+> **Developing the sample application**
 
 Let us start with the package.json. We need the following libraries in our app.
 
-Express JS — For serving requests
-jsonwebtoken — For writing and verifying JWT tokens
+- Express JS — For serving requests
+- jsonwebtoken — For writing and verifying JWT tokens
+
+```
 
 {
   "name": "day6-jwt",
@@ -52,20 +55,26 @@ jsonwebtoken — For writing and verifying JWT tokens
     "eslint-plugin-promise": "^4.2.1"
   }
 }
-Now do
+```
 
-npm install
+>  **Now do**
 
-We need to create a few more files for our project as shown in below image
-image
+`npm install
+`
 
-Now let us add our config code in config.js
+**We need to create a few more files for our project as shown in below image**
+![image](https://user-images.githubusercontent.com/25142868/68082185-7f152e00-fe3f-11e9-8af9-03c5d5064c94.png)
 
+> **Now let us add our config code in config.js**
+
+```
 module.exports = {
     secret : 'secretKeyHide'
 };
-Now let us add our jwt code in jwt.js
+```
+> **Now let us add our jwt code in jwt.js**
 
+```
 let jwt = require('jsonwebtoken');
 let config = require('./config');
 
@@ -96,8 +105,10 @@ exports.jwtTokenValidator = (token) => {
         }
     });
 }
-Now let us add our code in controller.js
+```
+> **Now let us add our code in controller.js**
 
+```
 const jwt = require("../common/jwt");
 
 function login(req, res) {
@@ -141,8 +152,10 @@ module.exports = {
     home : home,
     login : login
 }
-Now let us add our code in middleware.js
+```
+> **Now let us add our code in middleware.js**
 
+```
 const jwt = require("../common/jwt");
 
 let checkToken = (req, res, next) => {
@@ -170,8 +183,10 @@ let checkToken = (req, res, next) => {
 module.exports = {
     checkToken: checkToken
 }
-Now let us add our code in router.js
+```
+> **Now let us add our code in router.js**
 
+```
 const express = require("express");
 const router = express.Router();
 const middleware = require("../middleware/middleware");
@@ -182,8 +197,10 @@ router.post("/login",controller.login);
 
 
 module.exports = router;
-Now let us add our code in server.js
+```
+> **Now let us add our code in server.js**
 
+```
 const express = require("express");
 const bodyParser = require("body-parser");
 const routers = require("../router/router");
@@ -203,36 +220,41 @@ function server() {
 module.exports={
     server : server
 }
-Now let us add our code in main.js
+```
+> **Now let us add our code in main.js**
 
+```
 const server = require("./server/server");
 
 server.server();
-Let us run this app and see what we got here. Open a terminal and run this.
+```
 
-node server.js // starts server on 8000 port
+> **Let us run this app and see what we got here. Open a terminal and run this.**
 
-Now try to make a postman request.
+`node server.js // starts server on 8000 port
+`
 
-Calling http://localhost:8000 without token
-image
+> **Now try to make a postman request.**
 
-Calling http://localhost:8000/login
-image
+**Calling http://localhost:8000 without token**
+![image](https://user-images.githubusercontent.com/25142868/68082390-0794ce00-fe42-11e9-8255-74036a65a4f4.png)
 
-Calling http://localhost:8000 with token generated while login
-image
+**Calling http://localhost:8000/login**
+![image](https://user-images.githubusercontent.com/25142868/68082417-593d5880-fe42-11e9-8fa5-278ed334663e.png)
+
+**Calling http://localhost:8000 with token generated while login**
+![image](https://user-images.githubusercontent.com/25142868/68082470-36f80a80-fe43-11e9-9ca0-5408dd8cfffe.png)
 
 **
 
-In the above Example, we are doing the following things:
+> In the above Example, we are doing the following things:
 
 **
 
-Capture headers with names ‘x-access-token’ or ‘Authorization.’
-If the header is in ‘Authorization: Bearer xxxx…’ format, strip unwanted prefix before token.
-Using jwt package and secret string, validate the token.
-If anything goes wrong, return an error immediately before passing control to next handler.
-Export the middleware function for other modules to use.
+- Capture headers with names ‘x-access-token’ or ‘Authorization.’
+- If the header is in ‘Authorization: Bearer xxxx…’ format, strip unwanted prefix before token.
+- Using jwt package and secret string, validate the token.
+- If anything goes wrong, return an error immediately before passing control to next handler.
+- Export the middleware function for other modules to use.
+
 I hope this article can help you to integrate JWT into your NodeJS REST API.
-
