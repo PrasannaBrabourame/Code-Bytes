@@ -1,0 +1,32 @@
+{
+  "name": "day2-webpack",
+  "version": "1.0.0",
+  "description": "React is the most popular javascript framework which is used by millions of developers around the globe. Creating a React app from Scratch is quite painful as it requires a lot of configuration. We all know that create-react-app gives a nice boilerplate to begin a journey with react, but it lacks some amount of configuration.",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --open --hot --mode development",
+    "build": "webpack --mode production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.12.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-react": "^7.7.4",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.0.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.9.0"
+  }
+}
