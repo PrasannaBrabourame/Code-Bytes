@@ -14,7 +14,8 @@ function login(req, res) {
             res.json({
                 success: true,
                 message: 'Authentication successful!',
-                token: token
+                token: token,
+                user: "Admin"
             });
         } else {
             res.send(403).json({
