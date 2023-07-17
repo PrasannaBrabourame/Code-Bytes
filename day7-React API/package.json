@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-sass": "^7.0.3",
+    "node-sass": "^9.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
@@ -19,6 +19,7 @@
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
     "@babel/preset-react": "^7.9.4",
+
     "babel-loader": "^8.1.0",
     "css-loader": "^3.5.2",
     "html-loader": "^0.5.5",
@@ -27,6 +28,7 @@
     "style-loader": "^0.23.1",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
+
     "webpack-dev-server": "^4.11.1"
   }
 }
